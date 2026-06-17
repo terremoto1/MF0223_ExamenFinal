@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:3000/servidores";
+const API_URL = "https://mf0223-examenfinal.onrender.com/servidores";
 const serverForm = document.getElementById("serverForm");
 const listaServidores = document.getElementById("listaServidores");
 
