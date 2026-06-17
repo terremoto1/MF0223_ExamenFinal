@@ -21,7 +21,7 @@ function renderizarTarjetas(servidores) {
     listaServidores.innerHTML = ""; 
 
     servidores.forEach(servidor => {
-        const claseAlmacenamiento = servidor.almacenamiento === "SSD" ? "card-alto" : "card-bajo"           
+        const claseAlmacenamiento = servidor.almacenamiento === "SSD" ? "card-ssd" : "card-hdd"           
         const col = document.createElement("div");
         col.className = "col";
         
@@ -34,6 +34,7 @@ function renderizarTarjetas(servidores) {
                         <p class="card-text mb-1"><strong>CPU:</strong> ${servidor.cpu} núcleos</p>
                         <p class="card-text mb-1"><strong>RAM:</strong> ${servidor.ram} GB</p>
                         <p class="card-text mb-1"><strong>Almacenamiento:</strong> ${servidor.almacenamiento}</p>
+                        <p class="card-text mb-1"><strong>Presupuesto:</strong> ${servidor.presupuesto} €</p>
                     </div>
                     <div class="text-end mt-3">
                         <button class="btn btn-outline-danger btn-sm" onclick="eliminarServidor('${servidor.id}')">
@@ -51,11 +52,19 @@ function renderizarTarjetas(servidores) {
 serverForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const presupuestoValor = Number(document.getElementById("presupuesto").value); 
+    if (presupuestoValor > 700) {
+        alert("Error: El presupuesto del servidor no puede superar los 700€.");
+        return; 
+    }
+
+    
     const nuevoServidor = {
         nombre: document.getElementById("nombre").value.trim(),
         cpu: document.getElementById("cpu").value,
         ram: document.getElementById("ram").value,
         almacenamiento: document.getElementById("almacenamiento").value,
+        presupuesto: document.getElementById("presupuesto").value, 
     };
 
     try {

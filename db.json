@@ -1,11 +1,12 @@
 {
   "servidores": [
     {
-      "nombre": "servidor2",
+      "nombre": "servidor3",
       "cpu": "4",
-      "ram": "16",
+      "ram": "32",
       "almacenamiento": "HDD",
-      "id": "TlpqgiomUKo"
+      "presupuesto": "700",
+      "id": "ri3fq9UU-RU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

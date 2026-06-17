@@ -1,9 +1,26 @@
-.card-alto {
-    border: 2px solid #dc3545 !important;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+body {
+    background-color: #f6f9fc;
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    color: #333d47;
+    scroll-behavior: smooth;
+    padding-top: 2%;
+}
+
+.card-ssd {
+    border: 2px solid #198754 !important;
     background-color: #fff5f5;
 }
 
-.card-bajo {
-    border: 2px solid #198754 !important;
+.card-hdd {
+    border: 2px solid #0f172a !important;
     background-color: #f4fbf7;
+}
+
+/* PIE DE PAGINA */
+.custom-footer {
+    background-color: #0f172a;
+    color: #ffffff;
+    text-align: center;
 }
