@@ -50,21 +50,20 @@ function renderizarTarjetas(servidores) {
 
 // --- FUNCIONALIDAD POST ---
 serverForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const presupuestoValor = Number(document.getElementById("presupuesto").value); 
-    if (presupuestoValor > 700) {
-        alert("Error: El presupuesto del servidor no puede superar los 700€.");
-        return; 
+    
+    if (!serverForm.checkValidity()) {
+        serverForm.reportValidity();
+        e.preventDefault(); 
+        return;                      
     }
 
-    
+    e.preventDefault();
     const nuevoServidor = {
         nombre: document.getElementById("nombre").value.trim(),
         cpu: document.getElementById("cpu").value,
         ram: document.getElementById("ram").value,
         almacenamiento: document.getElementById("almacenamiento").value,
-        presupuesto: document.getElementById("presupuesto").value, 
+        presupuesto: Number(document.getElementById("presupuesto").value) 
     };
 
     try {

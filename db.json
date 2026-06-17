@@ -7,6 +7,14 @@
       "almacenamiento": "HDD",
       "presupuesto": "700",
       "id": "ri3fq9UU-RU"
+    },
+    {
+      "nombre": "servidor2",
+      "cpu": "2",
+      "ram": "4",
+      "almacenamiento": "SSD",
+      "presupuesto": 700,
+      "id": "5Mvz-AaSunU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
