@@ -1,0 +1,9 @@
+.card-alto {
+    border: 2px solid #dc3545 !important;
+    background-color: #fff5f5;
+}
+
+.card-bajo {
+    border: 2px solid #198754 !important;
+    background-color: #f4fbf7;
+}
