@@ -1,19 +1,13 @@
-# ---------- Etapa 1: Build ----------
-FROM node:18 AS build
+FROM node:18-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
+# Instala json-server de forma global dentro del contenedor
+RUN npm install -g json-server
 
 COPY . .
-RUN npm run build
 
-# ---------- Etapa 2: Producción ----------
-FROM nginx:alpine
+EXPOSE 3000
 
-COPY --from=build /app/build /usr/share/nginx/html
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+# El comando definitivo que ejecutará Render al arrancar
+CMD ["json-server", "--watch", "db.json", "--host", "0.0.0.0", "--port", "3000"]
